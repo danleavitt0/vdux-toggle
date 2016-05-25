@@ -19,7 +19,6 @@ function render ({props, children}) {
   return (
     <Block
       w={w}
-      minWidth='100px'
       relative
       cursor='pointer'
       onFocus={[props.onFocus, stopEvent]}
@@ -27,17 +26,19 @@ function render ({props, children}) {
       onClick={[props.onClick, stopEvent]}>
       <Input absolute wide tall opacity='0' pointerEvents='none' name={name} value={active} type='checkbox'/>
       <Flex cursor='pointer' align='start'>
-        <Block
-          tag='label'
-          align='start center'
-          w='calc(100% - 38px)'
-          relative
-          overflow='visible'
-          cursor='pointer'
-          {...labelProps}
-          class={'vui-toggle-label'}>
-          {label}
-        </Block>
+        {label && (
+          <Block
+            tag='label'
+            align='start center'
+            w='calc(100% - 38px)'
+            relative
+            overflow='visible'
+            cursor='pointer'
+            {...labelProps}
+            class={'vui-toggle-label'}>
+            {label}
+          </Block>
+        )}
         <Block relative p='4px 0px 4px 2px' w='36px'>
           <Block
             wide
