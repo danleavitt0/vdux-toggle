@@ -21,12 +21,15 @@
   },
   "homepage": "https://github.com/danleavitt0/vdux-toggle#readme",
   "dependencies": {
-    "@f/create-action": "^1.1.1",
-    "@f/handle-actions": "^1.1.2",
-    "@f/omit": "^2.2.3",
-    "flatten": "^1.0.2",
-    "vdux": "^2.4.6",
-    "vdux-containers": "^1.1.6",
-    "vdux-ui": "^1.2.6"
+    "@f/create-action": "1.1.1",
+    "@f/handle-actions": "1.1.2",
+    "@f/omit": "2.2.3",
+    "flatten": "1.0.2",
+    "vdux": "2.4.10",
+    "vdux-containers": "1.1.6",
+    "vdux-ui": "1.2.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0"
   }
 }

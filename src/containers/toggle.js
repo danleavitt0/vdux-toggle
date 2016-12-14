@@ -5,9 +5,10 @@ import handleActions from '@f/handle-actions'
 import createAction from '@f/create-action'
 import omit from '@f/omit'
 
-function initialState () {
+function initialState ({props}) {
+  const {startActive = false} = props
   return {
-    active: false
+    active: startActive
   }
 }
 
