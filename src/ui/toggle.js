@@ -23,9 +23,10 @@ function render ({props, children}) {
       cursor='pointer'
       onFocus={[props.onFocus, stopEvent]}
       onBlur={[props.onBlur, stopEvent]}
-      onClick={[props.onClick, stopEvent]}>
+      onClick={[props.onClick, stopEvent]}
+      {...restProps}>
       <Input absolute wide tall opacity='0' pointerEvents='none' name={name} value={active} type='checkbox'/>
-      <Flex cursor='pointer' align='start'>
+      <Flex cursor='pointer' align='start center'>
         {label && (
           <Block
             tag='label'
