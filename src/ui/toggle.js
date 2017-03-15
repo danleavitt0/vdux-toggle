@@ -12,7 +12,7 @@ import flatten from 'flatten'
 
 function render ({props, children}) {
   const {
-    w, name, label, labelClass, color = 'secondary', bgColor = 'primary',
+    w, value, name, label, labelClass, color = 'secondary', bgColor = 'primary',
     labelPosition = 'left', labelProps = {}, active, ...restProps
   } = props
 
@@ -23,6 +23,7 @@ function render ({props, children}) {
       w='calc(100% - 38px)'
       relative
       overflow='visible'
+      flex
       cursor='pointer'
       {...labelProps}
       class={'vui-toggle-label'}>
@@ -37,7 +38,7 @@ function render ({props, children}) {
       cursor='pointer'
       onFocus={[props.onFocus, stopEvent]}
       onBlur={[props.onBlur, stopEvent]}
-      onClick={[props.onClick, stopEvent]}
+      onClick={[() => props.onClick(name), stopEvent]}
       {...restProps}>
       <Input absolute wide tall opacity='0' pointerEvents='none' name={name} value={active} type='checkbox'/>
       <Flex cursor='pointer' align='start center'>
